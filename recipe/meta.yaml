@@ -23,6 +23,7 @@ requirements:
     - numpy
     - meson
     - meson-python
+    - setuptools_scm
   run:
     - python
     - {{ pin_compatible('numpy') }}
