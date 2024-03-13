@@ -21,6 +21,8 @@ requirements:
     - mkl-devel
     - cython
     - numpy
+    - meson
+    - meson-python
   run:
     - python
     - {{ pin_compatible('numpy') }}
