@@ -1,2 +1,1 @@
-set MKLROOT=%PREFIX%
-%PYTHON% -m pip install . --no-deps -vv
+%PYTHON% -m pip install . --no-deps -vv --no-build-isolation
