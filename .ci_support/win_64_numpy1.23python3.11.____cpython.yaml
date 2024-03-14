@@ -4,8 +4,10 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+mkl:
+- '2023'
 mkl_devel:
-- '2022'
+- '2023'
 numpy:
 - '1.23'
 pin_run_as_build:

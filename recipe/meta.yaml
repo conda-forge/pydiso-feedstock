@@ -1,5 +1,5 @@
 {% set name = "pydiso" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,29 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 883e1c4bda04afebd4ac364f1a2992e26123be0f8965c5ac59571549c6cec608
+  sha256: 1acd2783bc9b1704e66054fe944c54cce244957b6e584416bf83b90f85e24048
 
 build:
-  number: 4
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - pkg-config
   host:
     - python
     - pip
+    - mkl
     - mkl-devel
     - cython
     - numpy
+    - meson
+    - meson-python
+    - setuptools_scm
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - mkl
+    - {{ pin_compatible('mkl') }}
     - scipy >=0.13
 
 test:
