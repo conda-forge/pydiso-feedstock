@@ -10,11 +10,12 @@ source:
   sha256: d17c6c73422abcf812bfdca9b2e4082778d6c1d2b8102304e0e41877c3d44c26
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - pkg-config
   host:
     - python
@@ -28,7 +29,6 @@ requirements:
     - setuptools_scm
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('mkl') }}
     - scipy >=0.13
 
