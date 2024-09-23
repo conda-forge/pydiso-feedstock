@@ -3,11 +3,11 @@ c_compiler:
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge/label/numpy_rc,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 mkl:
-- '2023'
+- '2024'
 mkl_devel:
 - '2023'
 numpy:
