@@ -15,12 +15,11 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - pkg-config
   host:
     - python
     - pip
-    - mkl
     - mkl-devel
     - cython
     - numpy
@@ -29,7 +28,6 @@ requirements:
     - setuptools_scm
   run:
     - python
-    - {{ pin_compatible('mkl') }}
     - scipy >=0.13
 
 test:
