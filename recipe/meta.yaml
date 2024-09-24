@@ -18,7 +18,7 @@ requirements:
     - {{ stdlib('c') }}
     - pkg-config
   host:
-    - python
+    - python >=3.10
     - pip
     - mkl-devel
     - cython
@@ -27,7 +27,7 @@ requirements:
     - meson-python
     - setuptools_scm
   run:
-    - python
+    - python >=3.10
     - scipy >=0.13
     - libblas * *mkl  # [win]
 
