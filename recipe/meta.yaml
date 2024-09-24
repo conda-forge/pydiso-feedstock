@@ -1,5 +1,5 @@
 {% set name = "pydiso" %}
-{% set version = "0.0.5" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d17c6c73422abcf812bfdca9b2e4082778d6c1d2b8102304e0e41877c3d44c26
+  sha256: 5c6c98048aafc5a006e79de02a81d8821869ccf789a022aacc38d1d1956212fc
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -29,6 +29,7 @@ requirements:
   run:
     - python
     - scipy >=0.13
+    - libblas=*=mkl  # [win]
 
 test:
   imports:
