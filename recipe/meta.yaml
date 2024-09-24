@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [py<310]
 
 requirements:
   build:
@@ -18,7 +19,7 @@ requirements:
     - {{ stdlib('c') }}
     - pkg-config
   host:
-    - python >=3.10
+    - python
     - pip
     - mkl-devel
     - cython
@@ -27,7 +28,7 @@ requirements:
     - meson-python
     - setuptools_scm
   run:
-    - python >=3.10
+    - python
     - scipy >=0.13
     - libblas * *mkl  # [win]
 
