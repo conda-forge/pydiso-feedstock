@@ -29,7 +29,7 @@ requirements:
   run:
     - python
     - scipy >=0.13
-    - libblas=*=mkl  # [win]
+    - libblas * *mkl  # [win]
 
 test:
   imports:
