@@ -30,8 +30,6 @@ requirements:
   run:
     - python
     - scipy >=0.13
-    - numpy
-    - mkl
     - libblas =*=*mkl  # [win]
 
 test:
