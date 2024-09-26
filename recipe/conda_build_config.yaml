@@ -1,4 +1,4 @@
-mkl-devel:
-  - 2023.2
-  - 2024.1  #[not osx]
-  - 2024.2  #[not osx]
+mkl_devel:
+    - 2023.2
+    - 2024.1  # [not osx]
+    - 2024.2  # [not osx]
