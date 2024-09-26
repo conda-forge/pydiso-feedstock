@@ -21,7 +21,7 @@ requirements:
   host:
     - python
     - pip
-    - mkl-devel ={{ mkl_version }}
+    - mkl-devel
     - cython
     - numpy
     - meson
