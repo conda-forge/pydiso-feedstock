@@ -21,7 +21,7 @@ requirements:
   host:
     - python
     - pip
-    - mkl-devel
+    - mkl-devel = {{ mkl_version }}
     - cython
     - numpy
     - meson
@@ -30,7 +30,9 @@ requirements:
   run:
     - python
     - scipy >=0.13
-    - libblas =*=*mkl  # [win]
+  run_constrained:
+    # Block openmp 5.0.0 from being installed in the same environment (conflicts with MKL)
+    - openmp ==99999999999999
 
 test:
   imports:
