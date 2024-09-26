@@ -21,7 +21,7 @@ requirements:
   host:
     - python
     - pip
-    - mkl-devel = {{ mkl_version }}
+    - mkl-devel ={{ mkl_version }}
     - cython
     - numpy
     - meson
@@ -31,7 +31,9 @@ requirements:
     - python
     - scipy >=0.13
   run_constrained:
-    # Block openmp 5.0.0 from being installed in the same environment (conflicts with MKL)
+    # Block openmp from being installed in the same environment (conflicts with numpy and MKL)
+    # done by giving an unsatisfiable openmp version.
+    # Note: llvm-openmp is safe though.
     - openmp ==99999999999999
 
 test:
