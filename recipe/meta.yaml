@@ -1,5 +1,5 @@
 {% set name = "pydiso" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5c6c98048aafc5a006e79de02a81d8821869ccf789a022aacc38d1d1956212fc
+  sha256: 65110d88924f1e1de28203b951b5359aaceae37e005c0fbfc46b837990e7e327
 
 build:
   number: 0
