@@ -8,6 +8,38 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
+      linux_64_mkl_devel2023.0numpy2.0python3.10.____cpython:
+        CONFIG: linux_64_mkl_devel2023.0numpy2.0python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.0numpy2.0python3.11.____cpython:
+        CONFIG: linux_64_mkl_devel2023.0numpy2.0python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.0numpy2.0python3.12.____cpython:
+        CONFIG: linux_64_mkl_devel2023.0numpy2.0python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.0numpy2python3.13.____cp313:
+        CONFIG: linux_64_mkl_devel2023.0numpy2python3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.1numpy2.0python3.10.____cpython:
+        CONFIG: linux_64_mkl_devel2023.1numpy2.0python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.1numpy2.0python3.11.____cpython:
+        CONFIG: linux_64_mkl_devel2023.1numpy2.0python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.1numpy2.0python3.12.____cpython:
+        CONFIG: linux_64_mkl_devel2023.1numpy2.0python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2023.1numpy2python3.13.____cp313:
+        CONFIG: linux_64_mkl_devel2023.1numpy2python3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mkl_devel2023.2numpy2.0python3.10.____cpython:
         CONFIG: linux_64_mkl_devel2023.2numpy2.0python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -22,6 +54,22 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mkl_devel2023.2numpy2python3.13.____cp313:
         CONFIG: linux_64_mkl_devel2023.2numpy2python3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2024.0numpy2.0python3.10.____cpython:
+        CONFIG: linux_64_mkl_devel2024.0numpy2.0python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2024.0numpy2.0python3.11.____cpython:
+        CONFIG: linux_64_mkl_devel2024.0numpy2.0python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2024.0numpy2.0python3.12.____cpython:
+        CONFIG: linux_64_mkl_devel2024.0numpy2.0python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mkl_devel2024.0numpy2python3.13.____cp313:
+        CONFIG: linux_64_mkl_devel2024.0numpy2python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mkl_devel2024.1numpy2.0python3.10.____cpython:
@@ -56,6 +104,7 @@ jobs:
         CONFIG: linux_64_mkl_devel2024.2numpy2python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+    maxParallel: 20
   timeoutInMinutes: 360
   variables: {}
 
