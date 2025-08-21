@@ -1,7 +1,8 @@
 mkl_devel:
-    - 2023.0
-    - 2023.1
     - 2023.2
     - 2024.0  # [not osx]
     - 2024.1  # [not osx]
     - 2024.2  # [not osx]
+    - 2025.0  # [not osx]
+    - 2025.1  # [not osx]
+    - 2025.2  # [not osx]
