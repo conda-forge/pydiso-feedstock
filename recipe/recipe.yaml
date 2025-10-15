@@ -29,7 +29,7 @@ requirements:
     - cython
     - numpy
     - setuptools_scm >=6.2
-    - mkl_devel
+    - mkl-devel
   run:
     - python
     - numpy >=1.22.4
