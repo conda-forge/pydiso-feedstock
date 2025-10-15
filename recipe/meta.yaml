@@ -1,13 +1,13 @@
 {% set name = "pydiso" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d6cdcba183bc3a106176d093e99d7105734b2a3fde2d1a5b922cca3cec35318a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 336494e121afa169f2da25c5faa00785251ac8c7ebe3c98e120cc89b30ab447d
 
 build:
   number: 0
