@@ -8,18 +8,6 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_is_freethreadingfalsemkl_devel2023.2python3.11.____cpython:
-        CONFIG: win_64_is_freethreadingfalsemkl_devel2023.2python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_is_freethreadingfalsemkl_devel2023.2python3.12.____cpython:
-        CONFIG: win_64_is_freethreadingfalsemkl_devel2023.2python3.12.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_is_freethreadingfalsemkl_devel2023.2python3.13.____cp313:
-        CONFIG: win_64_is_freethreadingfalsemkl_devel2023.2python3.13.____cp313
-        UPLOAD_PACKAGES: 'True'
-      win_64_is_freethreadingfalsemkl_devel2023.2python3.14.____cp314:
-        CONFIG: win_64_is_freethreadingfalsemkl_devel2023.2python3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
       win_64_is_freethreadingfalsemkl_devel2024.1python3.11.____cpython:
         CONFIG: win_64_is_freethreadingfalsemkl_devel2024.1python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -44,11 +32,17 @@ jobs:
       win_64_is_freethreadingfalsemkl_devel2024.2python3.14.____cp314:
         CONFIG: win_64_is_freethreadingfalsemkl_devel2024.2python3.14.____cp314
         UPLOAD_PACKAGES: 'True'
-      win_64_is_freethreadingtruemkl_devel2023.2python3.13.____cp313t:
-        CONFIG: win_64_is_freethreadingtruemkl_devel2023.2python3.13.____cp313t
+      win_64_is_freethreadingfalsemkl_devel2025python3.11.____cpython:
+        CONFIG: win_64_is_freethreadingfalsemkl_devel2025python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_is_freethreadingtruemkl_devel2023.2python3.14.____cp314t:
-        CONFIG: win_64_is_freethreadingtruemkl_devel2023.2python3.14.____cp314t
+      win_64_is_freethreadingfalsemkl_devel2025python3.12.____cpython:
+        CONFIG: win_64_is_freethreadingfalsemkl_devel2025python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_is_freethreadingfalsemkl_devel2025python3.13.____cp313:
+        CONFIG: win_64_is_freethreadingfalsemkl_devel2025python3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+      win_64_is_freethreadingfalsemkl_devel2025python3.14.____cp314:
+        CONFIG: win_64_is_freethreadingfalsemkl_devel2025python3.14.____cp314
         UPLOAD_PACKAGES: 'True'
       win_64_is_freethreadingtruemkl_devel2024.1python3.13.____cp313t:
         CONFIG: win_64_is_freethreadingtruemkl_devel2024.1python3.13.____cp313t
@@ -61,6 +55,12 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       win_64_is_freethreadingtruemkl_devel2024.2python3.14.____cp314t:
         CONFIG: win_64_is_freethreadingtruemkl_devel2024.2python3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+      win_64_is_freethreadingtruemkl_devel2025python3.13.____cp313t:
+        CONFIG: win_64_is_freethreadingtruemkl_devel2025python3.13.____cp313t
+        UPLOAD_PACKAGES: 'True'
+      win_64_is_freethreadingtruemkl_devel2025python3.14.____cp314t:
+        CONFIG: win_64_is_freethreadingtruemkl_devel2025python3.14.____cp314t
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
