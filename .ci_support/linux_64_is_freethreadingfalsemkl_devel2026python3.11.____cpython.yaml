@@ -15,7 +15,7 @@ docker_image:
 is_freethreading:
 - false
 mkl_devel:
-- '2025'
+- '2026'
 numpy:
 - '2'
 pin_run_as_build:
