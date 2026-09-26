@@ -9,7 +9,7 @@ channel_targets:
 is_freethreading:
 - false
 mkl_devel:
-- '2025'
+- '2023.2'
 numpy:
 - '2'
 pin_run_as_build:
