@@ -1,5 +1,5 @@
 context:
-  version: "0.2.0"
+  version: "0.3.0"
   # ensure is_freethreading gets detected as a used variable
   touch_is_freethreading: ${{ is_freethreading }}
 
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pydiso/pydiso-${{ version }}.tar.gz
-  sha256: 336494e121afa169f2da25c5faa00785251ac8c7ebe3c98e120cc89b30ab447d
+  sha256: 0b6d0f3f4cb473a5d74179c72a6774181233ea80029f18c3147c3461aa824ac7
 
 build:
-  number: 1
+  number: 0
   skip: match(python, "<3.11")
 
 requirements:
