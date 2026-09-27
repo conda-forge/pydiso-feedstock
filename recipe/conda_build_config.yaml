@@ -1,4 +1,7 @@
+# pydiso requires python >=3.12, and its abi3 extension targets the 3.12 limited API
+python_min:
+  - '3.12'
 mkl_devel:
-    - 2023.2
-    - 2024.1  # [not osx]
-    - 2024.2  # [not osx]
+  - '2025'  # [not osx]
+  - '2026'  # [not osx]
+  - '2023'  # [osx]

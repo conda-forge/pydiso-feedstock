@@ -13,27 +13,38 @@ source:
 
 build:
   number: 0
-  skip: match(python, "<3.11")
+  skip:
+    - match(python, "<" ~ python_min)
+    # the abi3 build is made once on python_min and covers every later (non-freethreading) python
+    - is_abi3 and not match(python, python_min ~ ".*")
+  python:
+    version_independent: ${{ is_abi3 }}
+  script:
+    - if: is_abi3
+      then: ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
+      # Cython can't target the free-threaded stable ABI (abi3t) yet, so those builds opt out of the limited API
+      else: ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation -Csetup-args=-Dpython.allow_limited_api=false
 
 requirements:
   build:
     - ${{ stdlib('c') }}
     - ${{ compiler('c') }}
   host:
+    - if: is_abi3
+      then: python-abi3
+    - python
     - pip
-    - meson-python
+    - meson-python >=0.21.0
     - ninja
     - pkg-config
-    - python
-    - python-build
-    - cython
+    - cython >=3.1.0
     - numpy
     - setuptools_scm >=6.2
     - mkl-devel
   run:
-    - python
-    - numpy >=1.22.4
-    - scipy >=1.12
+    - python >=${{ python_min }}
+    - numpy >=2.2.0
+    - scipy >=1.15.0
   run_constraints:
     # Block openmp from being installed in the same environment (conflicts with numpy and MKL)
     # done by giving an unsatisfiable openmp version.
@@ -45,6 +56,26 @@ tests:
       imports:
         - pydiso
         - pydiso.mkl_solver
+      python_version:
+        - if: is_abi3
+          then: ${{ python_min }}.*
+        - "*"
+  - if: is_abi3
+    then:
+      python:
+        imports:
+          - pydiso
+          - pydiso.mkl_solver
+        python_version: 3.14.*
+  - if: is_abi3
+    then:
+      requirements:
+        run:
+          - abi3audit
+      script:
+        - if: unix
+          then: abi3audit $SP_DIR/pydiso/_mkl_solver.abi3.so -s -v --assume-minimum-abi3 ${{ python_min }}
+          else: abi3audit %SP_DIR%\pydiso\_mkl_solver.pyd -s -v --assume-minimum-abi3 ${{ python_min }}
 
 about:
   homepage: https://www.simpeg.xyz
