@@ -1,5 +1,5 @@
 context:
-  version: "0.3.0"
+  version: "0.3.1"
   # ensure is_freethreading gets detected as a used variable
   touch_is_freethreading: ${{ is_freethreading }}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pydiso/pydiso-${{ version }}.tar.gz
-  sha256: 0b6d0f3f4cb473a5d74179c72a6774181233ea80029f18c3147c3461aa824ac7
+  sha256: 27ebd0a0f00279b747f82893f7cd55e7c7557dd20ef5a5d989617b9f5a8fd790
   patches:
     # the PyPI `mkl` wheel dependency has no python metadata on conda-forge (fails pip check);
     # the conda `mkl` runtime comes from mkl-devel's run_exports instead
@@ -47,8 +47,8 @@ requirements:
     - mkl-devel
   run:
     - python >=${{ python_min }}
-    - numpy >=2.2.0
-    - scipy >=1.15.0
+    - numpy >=1.26.0
+    - scipy >=1.11.2
   run_constraints:
     # Block openmp from being installed in the same environment (conflicts with numpy and MKL)
     # done by giving an unsatisfiable openmp version.
