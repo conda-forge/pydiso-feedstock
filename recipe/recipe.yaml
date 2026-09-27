@@ -10,6 +10,10 @@ package:
 source:
   url: https://pypi.org/packages/source/p/pydiso/pydiso-${{ version }}.tar.gz
   sha256: 0b6d0f3f4cb473a5d74179c72a6774181233ea80029f18c3147c3461aa824ac7
+  patches:
+    # the PyPI `mkl` wheel dependency has no python metadata on conda-forge (fails pip check);
+    # the conda `mkl` runtime comes from mkl-devel's run_exports instead
+    - 0001-drop-pypi-mkl-runtime-dependency.patch
 
 build:
   number: 0
@@ -60,13 +64,6 @@ tests:
         - if: is_abi3
           then: ${{ python_min }}.*
         - "*"
-  - if: is_abi3
-    then:
-      python:
-        imports:
-          - pydiso
-          - pydiso.mkl_solver
-        python_version: 3.14.*
   - if: is_abi3
     then:
       requirements:
